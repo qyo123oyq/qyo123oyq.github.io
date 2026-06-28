@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/184972778?v=4">
+  {% seo %}
+  <script>
+    // 预绘制应用主题,避免闪烁
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  {% include header.html %}
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <button class="back-top" id="back-top" aria-label="回到顶部">↑</button>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        // 初始化按钮图标
+        if (root.getAttribute('data-theme') === 'dark') btn.textContent = '☀️';
+        btn.addEventListener('click', function () {
+          var cur = root.getAttribute('data-theme');
+          var next = cur === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+          btn.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+      }
+      var top = document.getElementById('back-top');
+      if (top) {
+        window.addEventListener('scroll', function () {
+          top.classList.toggle('show', window.scrollY > 400);
+        });
+        top.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+# ===== 站点信息 =====
+title: qyo123oyq 的博客
+description: 一个记录开源贡献、AI 辅助编程实践与技术折腾的个人博客。
+author: qyo123oyq
+email: 1700635609@qq.com
+
+# ===== URL =====
+# 用户名仓库(qyo123oyq.github.io)从根目录提供,baseurl 留空
+url: "https://qyo123oyq.github.io"
+baseurl: ""
+
+# ===== 构建配置 =====
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+# ===== 白名单插件(GitHub Pages 原生支持)=====
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# ===== 默认布局:posts 自动套用 post 布局,pages 套用 default =====
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+# ===== 时区 =====
+timezone: Asia/Shanghai
+
+# ===== 不发布到站点的文件 =====
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+
+# ===== jekyll-seo-tag 作者信息 =====
+social:
+  name: qyo123oyq
+  links:
+    - https://github.com/qyo123oyq
+
+# ===== 首页显示摘要 =====
+show_excerpts: true
