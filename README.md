@@ -1,12 +1,3 @@
-# 🤖 AI 辅助开源贡献博客
-
-这是一个纯静态博客，记录 AI 辅助下的开源 PR 贡献经历。
-
-## 内容
-
-- **3 个 PR 的完整复盘**：从 bug 定位到代码修复到提交流程
-- **技术栈**：TypeScript (Zod)、React/TypeScript、Kotlin/Jetpack Compose
-- **经验总结**：常见坑点、PR 规范、AI 协作流程
 
 ## 免费部署
 
